@@ -186,20 +186,15 @@ TROCAR: pontos de troca rápida deste site (adaptado do template Clínica Médic
     .hero{position:relative;color:#ffffff;overflow:hidden}
     .hero-foto{
       position:absolute;inset:0;
-      background:linear-gradient(135deg,var(--cor-marca-forte) 0%,var(--cor-marca-escura) 60%,var(--marinho) 100%);
+      background:var(--marinho) url('hero.webp') center center/cover no-repeat;
     }
-    /* etiqueta [PLACEHOLDER] visível no canto, com cara de espaço reservado de propósito */
-    .hero-foto::before{
-      content:"[PLACEHOLDER: foto da equipe ou do consultório]";
-      position:absolute;left:16px;bottom:16px;z-index:1;
-      font-size:.75rem;font-weight:700;letter-spacing:.02em;
-      color:#ffffff;background:rgba(42,23,18,.55);
-      border:1px dashed rgba(255,255,255,.6);border-radius:8px;
-      padding:6px 10px;max-width:70vw;
-    }
+    /* Overlay escuro: mais forte do lado esquerdo (onde fica o texto) e no rodapé,
+       para manter o contraste da headline sem apagar a foto do consultório. */
     .hero-foto::after{
       content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg,rgba(42,23,18,.55) 0%,rgba(42,23,18,.72) 100%);
+      background:
+        linear-gradient(90deg,rgba(42,23,18,.86) 0%,rgba(42,23,18,.62) 48%,rgba(42,23,18,.34) 100%),
+        linear-gradient(180deg,rgba(42,23,18,.18) 0%,rgba(42,23,18,.55) 100%);
     }
     .hero-inner{
       position:relative;z-index:2;
@@ -446,7 +441,7 @@ TROCAR: pontos de troca rápida deste site (adaptado do template Clínica Médic
 
     <!-- HERO full-bleed -->
     <section class="hero">
-      <div class="hero-foto" role="img" aria-label="Espaço reservado para foto da equipe da Nippo Dents"></div>
+      <div class="hero-foto" role="img" aria-label="Consultório da Nippo Dents, em São Judas, São Paulo"></div>
       <div class="hero-inner">
         <div class="conteudo">
           <div class="hero-caixa">
